@@ -4,6 +4,7 @@
   "description": "Push JSON prices in real-time over websockets",
   "main": "server.js",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "socket.io": "^4.0.1"

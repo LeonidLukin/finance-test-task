@@ -52,6 +52,7 @@ function trackTickers(socket) {
   }, FETCH_INTERVAL);
 
   socket.on('disconnect', function() {
+    console.log('Bye Alex. We are disconnected!');
     clearInterval(timer);
   });
 }
@@ -71,8 +72,12 @@ app.get('/', function(req, res) {
 });
 
 socketServer.on('connection', (socket) => {
+  console.log('Hi Alex. We are connected!');
   socket.on('start', () => {
     trackTickers(socket);
+  });
+  socket.on('disconnect', function() {
+    console.log('Bye Alex. We are disconnected!');
   });
 });
 
